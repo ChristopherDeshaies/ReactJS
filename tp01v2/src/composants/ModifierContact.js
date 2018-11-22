@@ -14,7 +14,7 @@ class ModifierContact extends Component {
             zip:this.props.contact.zip,
             followed:this.props.contact.followed
         }
-        this.modifier = this.modifier.bind(this);
+        this.modifierC = this.modifierC.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }
 
@@ -27,34 +27,36 @@ class ModifierContact extends Component {
         let zip=this.state.zip;
         let followed=this.state.followed;
 
-        switch(e.target.name){
+        /**
+         * TODO : avec des if
+         */
+        /* switch(e.target.name){
             case 'last':
                 last = e.target.value;
-                break;
+             
             case 'first':
                 first = e.target.value;
-                break;
+             
             case 'id':
                 id = parseInt(e.target.value);
-                break;
+            
             case 'adresse':
                 adresse = e.target.value;
-                break;
+             
             case 'city':
                 city = e.target.city;
-                break;
             case 'zip':
                 zip = e.target.zip;
-                break;
+              
             case 'followed':
                 followed = e.target.followed;
-                break;
-        }
+             
+        } */
 
         this.setState({ id:id, last:last, first:first, adresse:adresse, city:city, zip:zip, followed:followed});
     }
 
-    modifier() {
+    modifierC() {
         this.props.modifier(this.props.indice, new Contact(this.state.id,this.state.first,this.state.last,this.state.adresse,this.state.city,this.state.zip,this.state.followed));
     }
 
@@ -90,7 +92,7 @@ class ModifierContact extends Component {
                     <label>Followed</label>
                     <input name="followed" type="text" value={this.state.followed} className="form-control" onChange={this.handleChange}/>
                 </div>
-                <button class='btn btn-primary' onClick={this.modifier}>Valider</button>
+                <button class='btn btn-primary' onClick={this.modifierC}>Valider</button>
             </form>
         );
     }
