@@ -3,6 +3,17 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import ListeContacts from './Contacts';
 import FakeNews from './FakeNews';
 import Alerte from "./Alerte";
+import Clock from './Clock';
+
+function MultiClock() {
+    return (
+    <div>
+        <Clock ville='Paris' fuseauxHoraire='1' drapeau='fr'/>
+        <Clock ville='New York' fuseauxHoraire='-5' drapeau='us' fakenews/>
+        <Clock ville='Tokyo' fuseauxHoraire='9' drapeau='jp'/>
+        <Clock ville='Moscou' fuseauxHoraire='3' drapeau='ru'/>
+    </div>)
+}
 
 function MyRoute() {
   return (
@@ -19,12 +30,16 @@ function MyRoute() {
                     <li class="nav-item">
                         <Link class='nav-link' to="/alerte">Alerte</Link>
                     </li>
+                    <li class="nav-item">
+                        <Link class='nav-link' to="/horloge">Horloge</Link>
+                    </li>
                 </ul>
             </div>
             
-            <Route exact path="/" component={ListeContacts} class='col-12'/>
+            <Route exact path="/" component={ListeContacts} />
             <Route path="/fakenews" component={FakeNews} /> 
-            <Route path="/alerte" component={Alerte} />  
+            <Route path="/alerte" component={Alerte} /> 
+            <Route path="/horloge" component={MultiClock} />  
         </nav>
     </Router>
   );
