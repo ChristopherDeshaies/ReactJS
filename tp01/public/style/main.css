@@ -1,0 +1,21 @@
+form{
+  width:50%;
+  margin: auto auto;
+}
+
+.form-control{
+  background-color: #e9ecef;
+}
+
+.form-control:focus{
+  background-color: #e9ecef;
+}
+
+.table{
+  width:70%;
+  margin: auto auto;
+}
+
+body{
+  background-color: rgb(207, 207, 207)
+}
