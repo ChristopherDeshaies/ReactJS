@@ -1,0 +1,18 @@
+.anime-img{
+    position: absolute;
+    animation: example infinite 8s forwards reverse;
+    transition: transform 4s;
+}
+
+.foret{
+    background-image: url('../img/foret.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 900px;
+}
+
+@keyframes example {
+    0%   {left:0%;top:-100px;transform: rotate(0.05turn) scale(0.5);}
+    50%  {left:48%;top:-100px;transform: scale(0.2); }
+    100%  {left:0%;top:-100px;transform: rotate(0.05turn) scale(0.5);}
+}

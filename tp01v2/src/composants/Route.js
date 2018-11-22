@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import ListeContacts from './Contacts';
-import FakeNews from './FakeNews';
+import Animation from './Animation';
 import Alerte from "./Alerte";
 import Clock from './Clock';
 
@@ -25,7 +25,7 @@ function MyRoute() {
                         <Link class='nav-link' to="/">Contacts</Link>
                     </li>
                     <li class="nav-item">
-                        <Link class='nav-link' to="/fakenews">FakeNews</Link>
+                        <Link class='nav-link' to="/animation">Animation</Link>
                     </li>
                     <li class="nav-item">
                         <Link class='nav-link' to="/alerte">Alerte</Link>
@@ -37,7 +37,7 @@ function MyRoute() {
             </div>
             
             <Route exact path="/" component={ListeContacts} />
-            <Route path="/fakenews" component={FakeNews} /> 
+            <Route path="/animation" component={Animation} /> 
             <Route path="/alerte" component={Alerte} /> 
             <Route path="/horloge" component={MultiClock} />  
         </nav>
