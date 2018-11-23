@@ -44,14 +44,29 @@ class ModifierContact extends Component {
                 adresse = e.target.value;
              
             case 'city':
-                city = e.target.city;
+                city = e.target.value;
             case 'zip':
-                zip = e.target.zip;
+                zip = e.target.value;
               
             case 'followed':
-                followed = e.target.followed;
+                followed = e.target.value;
              
         } */
+        if(e.target.name==='id'){
+            id = parseInt(e.target.value);
+        }else if(e.target.name==='first'){
+            first = e.target.value;
+        }else if(e.target.name==='last'){
+            last = e.target.value;
+        }else if(e.target.name==='adresse'){
+            adresse = e.target.value;
+        }else if(e.target.name==='city'){
+            city = e.target.value;
+        }else if(e.target.name==='zip'){
+            zip = e.target.value;
+        }else if(e.target.name==='followed'){
+            followed = e.target.value;
+        }
 
         this.setState({ id:id, last:last, first:first, adresse:adresse, city:city, zip:zip, followed:followed});
     }
@@ -62,7 +77,7 @@ class ModifierContact extends Component {
 
     render() {
         return (
-            <form>
+            <div>
                 <label>Détails du Contact :</label>
                 <div className="form-group">
                     <label>ID</label>
@@ -93,7 +108,7 @@ class ModifierContact extends Component {
                     <input name="followed" type="text" value={this.state.followed} className="form-control" onChange={this.handleChange}/>
                 </div>
                 <button class='btn btn-primary' onClick={this.modifierC}>Valider</button>
-            </form>
+            </div>
         );
     }
 }
